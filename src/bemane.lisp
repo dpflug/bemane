@@ -22,7 +22,8 @@
 
 (defun downloader (item)
   (let* ((title (vector-pop (l:$  item "title" (text))))
-         (fn (uiop:ensure-pathname (concatenate 'string title ".mp3")))
+         (deslashed (substitute #\_ #\/ title))
+         (fn (uiop:ensure-pathname (concatenate 'string deslashed ".mp3")))
          (url (vector-pop (l:$ item "enclosure" (attr "url")))))
     (when (not (uiop:file-exists-p fn))
       (d:fetch url fn))))
