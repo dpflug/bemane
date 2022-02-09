@@ -2,6 +2,7 @@
 (defpackage :bemane
   (:use :cl)
   (:export :main)
+  (:import :uiop)
   (:import-from :arrows :-<>)
   (:local-nicknames (:d :dexador)
                     (:l :lquery)
