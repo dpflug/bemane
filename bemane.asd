@@ -6,7 +6,7 @@
   :source-control (:git "ssh://git@pflug.io:d/bemane.git")
   :license "GNU AGPLv3"
   :defsystem-depends-on ()
-  :depends-on (:dexador :lquery :lparallel :arrows)
+  :depends-on (:dexador :lquery :lparallel :arrows :uiop)
   :pathname "src"
   :components ((:file "bemane"))
   :description "Short script to keep a dir of BEMA episodes up-to-date")
