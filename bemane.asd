@@ -9,4 +9,7 @@
   :depends-on (:dexador :lquery :lparallel :arrows :uiop)
   :pathname "src"
   :components ((:file "bemane"))
-  :description "Short script to keep a dir of BEMA episodes up-to-date")
+  :description "Short script to keep a dir of BEMA episodes up-to-date"
+  :build-operation "program-op"
+  :build-pathname "bemane"
+  :entry-point "bemane:main")
