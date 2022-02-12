@@ -1,7 +1,7 @@
 variables:
   QUICKLISP_ADD_TO_INIT_FILE: "true"
 
-image: clfoundation/sbcl:latest
+image: clfoundation/ccl:latest
 
 before_script:
   - install-quicklisp
@@ -9,14 +9,15 @@ before_script:
 
 .build:
   variables:
-    LISP: sbcl
+    LISP: ccl
   script:
     - make build
   after_script:
-    - ls src
+    - ls ~/quicklisp/local-projects
+    - ls ~/quicklisp/local-projects/bemane/src/
   artifacts:
     paths:
-      - src/bemane
+      - ~/quicklisp/local-projects/bemane/src/bemane
 
 test-build:
   extends: .build
