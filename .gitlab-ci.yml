@@ -11,6 +11,8 @@ before_script:
   variables:
     LISP: ccl
   script:
+    - pwd
+    - ls
     - make build
   artifacts:
     paths:
