@@ -3,19 +3,16 @@ variables:
 
 image: clfoundation/sbcl:latest
 
-stages:
-  - build
-
 before_script:
   - install-quicklisp
   - git clone https://gitlab.com/dpflug/bemane ~/quicklisp/local-projects/
 
-  build:
-    stage: build
-    variables:
-      LISP: sbcl
-    script:
-      - make build
-    artifacts:
-      paths:
-        - bemane
+build:
+  stage: build
+  variables:
+    LISP: sbcl
+  script:
+    - make build
+  artifacts:
+    paths:
+      - bemane
