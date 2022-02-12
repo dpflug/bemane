@@ -1,7 +1,7 @@
 variables:
   QUICKLISP_ADD_TO_INIT_FILE: "true"
 
-image: clfoundation/ccl:latest
+image: clfoundation/sbcl:latest
 
 before_script:
   - install-quicklisp
@@ -9,12 +9,10 @@ before_script:
 
 .build:
   variables:
-    LISP: ccl
+    LISP: sbcl
   script:
     - make build
   after_script:
-    - pwd
-    - ls
     - ls src
   artifacts:
     paths:
