@@ -12,9 +12,10 @@ before_script:
     LISP: ccl
   script:
     - make build
+    - mv ~/quicklisp/local-projects/bemane/src/bemane ./
   artifacts:
     paths:
-      - ~/quicklisp/local-projects/bemane/src/bemane
+      - bemane
 
 test-build:
   extends: .build
