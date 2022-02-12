@@ -18,6 +18,7 @@ before_script:
     expire_in: 2 days
 
 test-build:
+  extends: .build
   artifacts:
     name: "bemane-$CI_COMMIT_REF_SLUG"
 
