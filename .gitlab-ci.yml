@@ -11,9 +11,11 @@ before_script:
   variables:
     LISP: ccl
   script:
+    - make build
+  after_script:
     - pwd
     - ls
-    - make build
+    - ls src
   artifacts:
     paths:
       - src/bemane
