@@ -1,18 +1,30 @@
 variables:
   QUICKLISP_ADD_TO_INIT_FILE: "true"
 
-image: clfoundation/sbcl:latest
+image: clfoundation/ccl:latest
 
 before_script:
   - install-quicklisp
   - git clone https://gitlab.com/dpflug/bemane ~/quicklisp/local-projects/
 
-build:
-  stage: build
+.build:
   variables:
-    LISP: sbcl
+    LISP: ccl
   script:
     - make build
   artifacts:
     paths:
-      - bemane
+      - src/bemane
+    expire_in: 2 days
+
+test-build:
+  artifacts:
+    name: "bemane-$CI_COMMIT_REF_SLUG"
+
+linux-amd64-release:
+  extends: .build
+  artifacts:
+    name: "bemane-linux-amd64-$CI_COMMIT_TAG"
+    expire_in: {}
+  rules:
+    - if: $CI_COMMIT_TAG
