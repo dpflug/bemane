@@ -12,7 +12,7 @@
   :description "Short script to keep a dir of BEMA episodes up-to-date")
 
 (defsystem #:bemane/exe
-  :pathname "dist"
+  :pathname "bin"
   :build-operation "program-op"
   :build-pathname "bemane"
   :entry-point "bemane:main"
