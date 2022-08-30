@@ -1,8 +1,8 @@
 name = "bemane"
-uuid = "b428892c-fc71-4036-bbfc-26254a3a4703"
 authors = ["David Pflug <david@pflug.io>"]
 version = "0.1.0"
 
 [deps]
 EzXML = "8f5d6c58-4d21-5cfd-889c-e3ad7ee6a615"
 HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+PackageCompiler = "9b87118b-4619-50d2-8e1e-99f35a4d4d9d"
