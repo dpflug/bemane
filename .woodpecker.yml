@@ -1,0 +1,7 @@
+pipeline:
+  build:
+    image: clfoundation/ccl:latest
+    environment:
+      - LISP=ccl
+    commands:
+      - make build
