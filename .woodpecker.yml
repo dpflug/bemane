@@ -4,4 +4,6 @@ pipeline:
     environment:
       - LISP=ccl
     commands:
+      - ln -s lisp ~/quicklisp/local-projects/bemane
+      - cd lisp
       - make build
